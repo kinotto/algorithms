@@ -24,6 +24,21 @@ function BST(){
   }
 }
 
+BST.prototype.add = function(root, el){
+
+  if(!root.left && el < root.data)
+    root.left = new Node(el);
+
+  if(!root.right && el < root.data)
+    root.left = new Node(el);
+
+  if(el > root.left.data)
+    this.add(root.right, el);
+
+  if(el < root.left.data)
+    this.add(root.left, el);
+
+}
 
 /*  8
   4   10
@@ -42,4 +57,6 @@ bst.root.right.parent = bst.root;
 
 console.log('LCA '+ bst.lca(bst.root, 0, 2));
 
-module.exports = bst;qqaaa
+bst.add(bst.root, 7);
+
+module.exports = bst;
