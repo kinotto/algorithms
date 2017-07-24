@@ -16,15 +16,18 @@ module.exports = {
             exclude: /node_modules/,
             loader: 'babel-loader'
         }]
-    },
+    }/*,
     plugins: [
       new UglifyJSPlugin()
-    ]
+    ]*/
 }
 
 function getFiles(folder){
   return fs.readdirSync(folder)
     .map(function(fileName){
       return folder + '/' + fileName;
+    })
+    .filter(function(filename){
+      return filename.substr(-3) === '.js'
     })
 }

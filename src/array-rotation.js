@@ -12,11 +12,11 @@ function rotate(arr, steps){
   if(n === 0)
     return arr.slice(0);
 
+  var p = arr.slice(n);
   if(n < 0)
     return arr.slice(n).concat(arr.slice(0, arr.length + n));
   else
     return arr.slice(n).concat(arr.slice(0, n));
-
 }
 
 //1 2 3 4 5

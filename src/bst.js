@@ -5,7 +5,7 @@
 function Node(data){
   this.data = data;
   this.left = this.right = null;
-  this.parent = null;
+  //this.parent = null;
 }
 
 function BST(){
@@ -50,10 +50,10 @@ bst.root.left = new Node(4);
 bst.root.right = new Node(10);
 bst.root.left.left = new Node(2);
 bst.root.left.right = new Node(6);
-bst.root.left.parent = bst.root;
+//bst.root.left.parent = bst.root;
 bst.root.right.left = new Node(9);
 bst.root.right.right = new Node(11);
-bst.root.right.parent = bst.root;
+//bst.root.right.parent = bst.root;
 
 console.log('LCA '+ bst.lca(bst.root, 0, 2));
 
